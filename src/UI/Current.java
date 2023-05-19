@@ -7,14 +7,11 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 
 public class Current {
     public static final int amount = 100000;
     private static final int maximumAmount = 20000;
-    
+
     public static class Amount {
         private static final String FILE_PATH = "withdrawals.txt";
 
