@@ -26,12 +26,13 @@ public class Savings {
         }
 
     class WithdrawalAmount {
-        Scanner input = new Scanner(System.in);
-        int withdrawalAmount;
+            Scanner input = new Scanner(System.in);
+            int withdrawalAmount;
 
-        public WithdrawalAmount() {
-            withdrawalAmount = input.nextInt();
+            public WithdrawalAmount() {
+                withdrawalAmount = input.nextInt();
             // Add validation and error handling for withdrawalAmount here
+            }
         }
     }
-}
+}    
