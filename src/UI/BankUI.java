@@ -26,6 +26,9 @@ public class BankUI {
     private JTextArea withdrawS;
     private JTextArea depositS;
 
+    private float currentAmount = 0; // Placeholder for the current account balance
+    private float savingsAmount = 0; // Placeholder for the savings account balance
+
     public void mainUI() {
         bankFrame = new JFrame("Welcome");
         welcomeText = new JLabel("Welcome to Zenith Bank. Input your PIN");
@@ -42,7 +45,7 @@ public class BankUI {
         amountWithdraw = new JLabel("How much do you want to Withdraw?");
         amountInput = new JTextField();
         withdrawBtn = new JButton("Withdraw");
-        depositC = new JTextArea("you have $"+Current.amount);
+        depositC = new JTextArea("you have $"+ Current.amount);
         amountDeposit = new JLabel("How much do you want to Deposit?");
         depositBtn = new JButton("Deposit");
         savingsAccount = new JFrame("Savings Account");
@@ -97,7 +100,51 @@ public class BankUI {
         });
 
         withdrawBtn.addActionListener(e -> {
+            String input = amountInput.getText();
+            try {
+                float withdrawAmount = Float.parseFloat(input);
+                if (withdrawAmount <= 0) {
+                    JOptionPane.showMessageDialog(null, "Invalid amount. Please enter a positive value.");
+                } else if (choiceFrame.getTitle().equals("Current Account")) {
+                    if (withdrawAmount <= currentAmount) {
+                        // Perform withdrawal logic for the current account
+                        currentAmount -= withdrawAmount;
+                        withdrawC.setText("You have $" + currentAmount);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Insufficient funds in the current account.");
+                    }
+                } else if (choiceFrame.getTitle().equals("Savings Account")) {
+                    if (withdrawAmount <= savingsAmount) {
+                        // Perform withdrawal logic for the savings account
+                        savingsAmount -= withdrawAmount;
+                        withdrawS.setText("You have $" + savingsAmount);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Insufficient funds in the savings account.");
+                    }
+                }
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Invalid amount. Please enter a valid number.");
+            }
+        });
 
+        depositBtn.addActionListener(e -> {
+            String input = amountInput.getText();
+            try {
+                float depositAmount = Float.parseFloat(input);
+                if (depositAmount <= 0) {
+                    JOptionPane.showMessageDialog(null, "Invalid amount. Please enter a positive value.");
+                } else if (choiceFrame.getTitle().equals("Current Account")) {
+                    // Perform deposit logic for the current account
+                    currentAmount += depositAmount;
+                    depositC.setText("You have $" + currentAmount);
+                } else if (choiceFrame.getTitle().equals("Savings Account")) {
+                    // Perform deposit logic for the savings account
+                    savingsAmount += depositAmount;
+                    depositS.setText("You have $" + savingsAmount);
+                }
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Invalid amount. Please enter a valid number.");
+            }
         });
     }
 }
