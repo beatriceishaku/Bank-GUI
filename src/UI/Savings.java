@@ -1,9 +1,12 @@
+package UI;
+
 import java.util.Scanner;
 
 public class Savings {
-    private static final int initialAmount = 100000;
+    public static final int amount = 100000;
     private static final int maximumAmount = 20000;
-    public class withdrawal{
+
+    public class amount{
         Scanner input = new Scanner(System.in);
         int withdrawalAmount = input.nextInt();
 
