@@ -38,16 +38,16 @@ public class BankUI {
         choiceFrame = new JFrame("Action");
         choice = new JLabel("What action do you want to perform?");
         currentAccount = new JFrame("Current Account");
-        withdrawC = new JLabel("you have $");
+        withdrawC = new JLabel("you have $"+ Current.amount);
         amountWithdraw = new JLabel("How much do you want to Withdraw?");
         amountInput = new JTextField();
         withdrawBtn = new JButton("Withdraw");
-        depositC = new JTextArea("you have $");
+        depositC = new JTextArea("you have $"+Current.amount);
         amountDeposit = new JLabel("How much do you want to Deposit?");
         depositBtn = new JButton("Deposit");
         savingsAccount = new JFrame("Savings Account");
-        withdrawS = new JTextArea("you have $");
-        depositS = new JTextArea("you have $");
+        withdrawS = new JTextArea("you have $"+ Savings.amount);
+        depositS = new JTextArea("you have $"+ Savings.amount);
 
         bankFrame.add(welcomeText);
         bankFrame.add(inputPin);
