@@ -3,12 +3,16 @@ package UI;
 import java.util.Scanner;
 
 public class Savings {
-    public static final int amount = 100000;
-    private static final int maximumAmount = 20000;
+    public static final int AMOUNT = 100000;
+    private static final int MAXIMUM_AMOUNT = 20000;
 
-    public class amount{
+    public class WithdrawalAmount {
         Scanner input = new Scanner(System.in);
-        int withdrawalAmount = input.nextInt();
+        int withdrawalAmount;
 
+        public WithdrawalAmount() {
+            withdrawalAmount = input.nextInt();
+            // Add validation and error handling for withdrawalAmount here
+        }
     }
 }
