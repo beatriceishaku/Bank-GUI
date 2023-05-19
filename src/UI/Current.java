@@ -25,9 +25,5 @@ public class Current {
         }
     }
     
-    public static void main(String[] args) {
-        Amount amountObj = new Amount();
-        amountObj.readWithdrawalAmount();
-    }
-}
+   }
 
