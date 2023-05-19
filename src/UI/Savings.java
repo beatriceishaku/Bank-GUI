@@ -25,7 +25,7 @@ public class Savings {
             System.out.println("An error occurred while saving account data: " + e.getMessage());
         }
 
-    public class WithdrawalAmount {
+    class WithdrawalAmount {
         Scanner input = new Scanner(System.in);
         int withdrawalAmount;
 
