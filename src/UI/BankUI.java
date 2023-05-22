@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BankUI extends JFrame{
+    public JButton depositBtn;
+    public JButton withdrawBtn;
+    public JButton transferBtn;
+    public JButton balanceBtn ;
     public JFrame bankFrame;
     public JLabel welcomeText;
     public JTextField inputPin;
@@ -39,10 +43,7 @@ public class BankUI extends JFrame{
         current = new JButton("Current Account");
         savings = new JButton("Savings Account");
         choiceFrame = new JFrame("Action");
-        publicJButton depositButton = new JButton("Deposit");
-        JButton withdrawButton = new JButton("Withdraw");
-        JButton transferButton = new JButton("Transfer");
-        JButton balanceButton = new JButton("Check Balance");
+       
         
         choice = new JLabel("What action do you want to perform?");
         currentAccount = new JFrame("Current Account");
