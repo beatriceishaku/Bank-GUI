@@ -89,7 +89,7 @@ public class BankUI extends JFrame{
         current.addActionListener(e -> {
 
             currentFrame.add(depositButton);
-            currentFrame.setLayout(null);
+            currentFrame.setLayout(new FlowLayout(FlowLayout.LEADING));
             currentFrame.add(withdrawButton);
             depositButton.setBounds(50,100,170,40);
             withdrawButton.setBounds(250,100,170,40);
@@ -101,7 +101,7 @@ public class BankUI extends JFrame{
 
         savings.addActionListener(e -> {
             savingsFrame.add(depositButton);
-            savingsFrame.setLayout(null);
+            savingsFrame.setLayout(new FlowLayout(FlowLayout.LEADING));
             savingsFrame.add(withdrawButton);
             savingsFrame.setVisible(true);
             savingsFrame.setSize(500, 450);
