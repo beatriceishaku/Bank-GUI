@@ -27,6 +27,8 @@ public class BankUI extends JFrame{
     public JFrame savingsAccount;
     public JTextArea withdrawS;
     public JTextArea depositS;
+    public JFrame savingsFrame;
+    public JFrame currentFrame;
 
     public final float currentAmount = 100000; // Placeholder for the current account balance
     public final float savingsAmount = 100000; // Placeholder for the savings account balance
@@ -42,7 +44,8 @@ public class BankUI extends JFrame{
         savings = new JButton("Savings Account");
         choiceFrame = new JFrame("Action");
        
-        
+        currentFrame = new JFrame("current Account");
+        savingsFrame = new JFrame("Savings account");
         choice = new JLabel("What action do you want to perform?");
         currentAccount = new JFrame("Current Account");
         withdrawC = new JLabel("you have $"+ Current.amount);
@@ -84,27 +87,27 @@ public class BankUI extends JFrame{
         });
 
         current.addActionListener(e -> {
-            choiceFrame.add(depositButton);
-            choiceFrame.setLayout(null);
-            choiceFrame.add(withdrawButton);
+
+            currentFrame.add(depositButton);
+            currentFrame.setLayout(null);
+            currentFrame.add(withdrawButton);
             depositButton.setBounds(50,100,170,40);
             withdrawButton.setBounds(250,100,170,40);
 
-            choiceFrame.setVisible(true);
-            choiceFrame.setSize(500, 450);
-            choiceFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            currentFrame.setVisible(true);
+            currentFrame.setSize(500, 450);
+            currentFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         });
 
         savings.addActionListener(e -> {
-            choiceFrame.add(depositButton);
-            choiceFrame.setLayout(null);
-            choiceFrame.add(withdrawButton);
+            savingsFrame.add(depositButton);
+            savingsFrame.setLayout(null);
+            savingsFrame.add(withdrawButton);
+            savingsFrame.setVisible(true);
+            savingsFrame.setSize(500, 450);
+            savingsFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             depositButton.setBounds(50,100,170,40);
             withdrawButton.setBounds(250,100,170,40);
-
-            choiceFrame.setVisible(true);
-            choiceFrame.setSize(500, 450);
-            choiceFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         });
     }
 }
