@@ -28,8 +28,8 @@ public class BankUI extends JFrame{
     public JTextArea withdrawS;
     public JTextArea depositS;
 
-    private float currentAmount = 0; // Placeholder for the current account balance
-    private float savingsAmount = 0; // Placeholder for the savings account balance
+    public final float currentAmount = 100000; // Placeholder for the current account balance
+    public final float savingsAmount = 100000; // Placeholder for the savings account balance
 
     public void mainUI() {
         bankFrame = new JFrame("Welcome");

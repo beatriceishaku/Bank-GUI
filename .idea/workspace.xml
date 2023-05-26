@@ -76,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684450249550</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="last again">
+      <created>1685105118276</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685105118276</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +100,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="g update" />
     <MESSAGE value="last" />
-    <option name="LAST_COMMIT_MESSAGE" value="last" />
+    <MESSAGE value="last again" />
+    <option name="LAST_COMMIT_MESSAGE" value="last again" />
   </component>
 </project>

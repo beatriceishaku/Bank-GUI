@@ -3,15 +3,14 @@ package UI;
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class Main extends BankUI {
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) {
 
         JLabel label = new JLabel("Place your finger on any alphabet key to scan finger print");
         JTextField textField = new JTextField();
         textField.setEditable(false);
-        textField.addKeyListener((KeyListener) new KeyChecker());
+        textField.addKeyListener(new KeyChecker());
 
         JFrame jframe = new JFrame();
 

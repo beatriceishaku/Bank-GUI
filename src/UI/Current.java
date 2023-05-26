@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Current extends BankUI{
     public static final int amount = 100000;
     private static final int maximumAmount = 20000;
-    public class Withdraw extends JFrame implements ActionListener {
+    public static class Withdraw extends JFrame implements ActionListener {
             JFrame frame;
             JLabel withdrawFrame = new JLabel("Withdraw");
             JButton firstAmount = new JButton("1,000");
@@ -62,112 +62,115 @@ public class Current extends BankUI{
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
-                firstAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 1,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                BankUI bankUI = new BankUI();
-                                int balance = amount - 1000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                firstAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to withdraw 1,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            new BankUI();
+                            int balance = amount - 1000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                secondAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 2,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount - 2000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                secondAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to withdraw 2,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount - 2000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                thirdAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 5,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount - 5000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                thirdAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to withdraw 5,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount - 5000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                fourthAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 10,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount - 10_000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                fourthAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to withdraw 10,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount - 10_000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                fifthAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 20,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount - 20_000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                fifthAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to withdraw 20,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount - 20_000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                sixthAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 40,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount - 40_000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                sixthAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to withdraw 40,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount - 40_000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                performTransaction.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int transaction = Integer.parseInt(otherAmount.getText());
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw \n\n" + transaction + " naira" + "\n" + "Do you wish to continue?","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                performTransaction.addActionListener(e -> {
+                    int transaction = Integer.parseInt(otherAmount.getText());
+                    int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw \n\n" + transaction + " naira" + "\n" + "Do you wish to continue?","Confirm Payment", JOptionPane.YES_NO_OPTION);
 
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount - transaction;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount - transaction;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
 
-                        }
                     }
                 });
 
@@ -188,7 +191,7 @@ public class Current extends BankUI{
 
         }
     }
-         public class Deposit extends JFrame implements ActionListener{
+         public static class Deposit extends JFrame implements ActionListener{
             JFrame frame;
 
             JLabel depositFrame = new JLabel("DEPOSIT");
@@ -237,110 +240,113 @@ public class Current extends BankUI{
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-                firstAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit 1,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount + 1000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                firstAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to deposit 1,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount + 1000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                secondAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit 2,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount + 2000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                secondAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to deposit 2,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount + 2000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                thirdAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit 5,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount + 5000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                thirdAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to deposit 5,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount + 5000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                fourthAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit 10,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount + 10_000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                fourthAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to deposit 10,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount + 10_000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                fifthAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit 20,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount + 20_000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                fifthAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to deposit 20,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount + 20_000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                sixthAmount.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit 40,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount + 40_000;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                sixthAmount.addActionListener(e -> {
+                    int answer = JOptionPane.showConfirmDialog(null, """
+                            You are about to deposit 40,000 naira\s
+
+                            Do you wish to continue?
+                            ""","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount + 40_000;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
-                performTransaction.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int transaction = Integer.parseInt(otherAmount.getText());
-                        int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit \n\n" + transaction + " naira" + "\n" + "Do you wish to continue?","Confirm Payment", JOptionPane.YES_NO_OPTION);
-                        String deposit = String.valueOf(amount + transaction);
-                        switch (answer) {
-                            case JOptionPane.YES_OPTION:
-                                int balance = amount + transaction;
-                                JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
-                                break;
-                            case JOptionPane.NO_OPTION:
-                                break;
-                        }
+                performTransaction.addActionListener(e -> {
+                    int transaction = Integer.parseInt(otherAmount.getText());
+                    int answer = JOptionPane.showConfirmDialog(null,"You are about to deposit \n\n" + transaction + " naira" + "\n" + "Do you wish to continue?","Confirm Payment", JOptionPane.YES_NO_OPTION);
+                    String deposit = String.valueOf(amount + transaction);
+                    switch (answer) {
+                        case JOptionPane.YES_OPTION:
+                            int balance = amount + transaction;
+                            JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
+                            break;
+                        case JOptionPane.NO_OPTION:
+                            break;
                     }
                 });
 
