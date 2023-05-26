@@ -1,5 +1,8 @@
- package UI;
+package UI;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,10 +11,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Current {
+public class Current extends BankUI{
     public static final int amount = 100000;
     private static final int maximumAmount = 20000;
-    public class Withdraw extends JFrame implements ActionListener{
+    public class Withdraw extends JFrame implements ActionListener {
             JFrame frame;
             JLabel withdrawFrame = new JLabel("Withdraw");
             JButton firstAmount = new JButton("1,000");
@@ -65,7 +68,7 @@ public class Current {
                         int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 1,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
                         switch (answer) {
                             case JOptionPane.YES_OPTION:
-                                ATMMachine atm = new ATMMachine();
+                                BankUI bankUI = new BankUI();
                                 int balance = amount - 1000;
                                 JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
                                 break;
@@ -180,11 +183,11 @@ public class Current {
                 performTransaction.addActionListener(this);
             }
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        @Override
+        public void actionPerformed(ActionEvent e) {
 
-            }
         }
+    }
          public class Deposit extends JFrame implements ActionListener{
             JFrame frame;
 
@@ -202,10 +205,7 @@ public class Current {
             public Deposit() {
                 frame = new JFrame();
                 addActionEvent();
-
-        //        Random random = new Random();
-        //        int amount = 10_000 + random.nextInt(99999);
-                int amount = 100_000;
+                int amount = 100000;
 
                 frame.add(depositFrame);
                 frame.add(firstAmount);
@@ -355,14 +355,11 @@ public class Current {
                 performTransaction.addActionListener(this);
             }
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
+             @Override
+             public void actionPerformed(ActionEvent e) {
 
-
-
-            }
-
-        }
+             }
+         }
 
 
     public static class Amount {

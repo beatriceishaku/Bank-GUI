@@ -4,10 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BankUI extends JFrame{
-    public JButton depositBtn;
-    public JButton withdrawBtn;
-    public JButton transferBtn;
-    public JButton balanceBtn ;
+    public JButton depositButton;
+    public JButton withdrawButton;
     public JFrame bankFrame;
     public JLabel welcomeText;
     public JTextField inputPin;
@@ -89,12 +87,8 @@ public class BankUI extends JFrame{
             choiceFrame.add(depositButton);
             choiceFrame.setLayout(null);
             choiceFrame.add(withdrawButton);
-            choiceFrame.add(transferButton);
-            choiceFrame.add(balanceButton);
             depositButton.setBounds(50,100,170,40);
             withdrawButton.setBounds(250,100,170,40);
-            transferButton.setBounds(50,200,170,40);
-            balanceButton.setBounds(250,200,170,40);
 
             choiceFrame.setVisible(true);
             choiceFrame.setSize(500, 450);
@@ -105,12 +99,8 @@ public class BankUI extends JFrame{
             choiceFrame.add(depositButton);
             choiceFrame.setLayout(null);
             choiceFrame.add(withdrawButton);
-            choiceFrame.add(transferButton);
-            choiceFrame.add(balanceButton);
             depositButton.setBounds(50,100,170,40);
             withdrawButton.setBounds(250,100,170,40);
-            transferButton.setBounds(50,200,170,40);
-            balanceButton.setBounds(250,200,170,40);
 
             choiceFrame.setVisible(true);
             choiceFrame.setSize(500, 450);

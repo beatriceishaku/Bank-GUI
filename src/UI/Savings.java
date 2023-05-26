@@ -1,16 +1,18 @@
 package UI;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
-public class Savings {
+public class Savings extends BankUI{
     public static final String FILE_PATH = "savings.txt";
-    public static final int AMOUNT = 100000;
-    private static final int MAXIMUM_AMOUNT = 20000;
-      public class Withdraw extends JFrame implements ActionListener{
+    public static int amount;
+
+    public class Withdraw extends JFrame implements ActionListener{
             JFrame frame;
             JLabel withdrawFrame = new JLabel("Withdraw");
             JButton firstAmount = new JButton("1,000");
@@ -64,7 +66,7 @@ public class Savings {
                         int answer = JOptionPane.showConfirmDialog(null,"You are about to withdraw 1,000 naira \n\n" +"Do you wish to continue?" + "\n","Confirm Payment", JOptionPane.YES_NO_OPTION);
                         switch (answer) {
                             case JOptionPane.YES_OPTION:
-                                ATMMachine atm = new ATMMachine();
+                                BankUI bankUI = new BankUI();
                                 int balance = amount - 1000;
                                 JOptionPane.showMessageDialog(null,"Your new Balance is " + balance);
                                 break;
@@ -362,10 +364,6 @@ public class Savings {
             }
 
         }
-    public static void main(String[] args) {
-        // Example usage
-        saveAccountData("John Doe", 5000);
-    }
 
     public static void saveAccountData(String accountHolder, int balance) {
         try (FileWriter writer = new FileWriter(FILE_PATH)) {

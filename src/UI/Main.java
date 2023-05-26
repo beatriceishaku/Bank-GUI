@@ -1,12 +1,17 @@
 package UI;
 
-public class Main {  public static void main(String[] args)throws Exception {
-    BankUI bankUI = new BankUI();
-    bankUI.mainUI();
-    JLabel label = new JLabel("Place your finger on any alphabet key to scan finger print");
+import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+public class Main extends BankUI {
+    public static void main(String[] args)throws Exception {
+
+        JLabel label = new JLabel("Place your finger on any alphabet key to scan finger print");
         JTextField textField = new JTextField();
         textField.setEditable(false);
-        textField.addKeyListener(new Keychecker());
+        textField.addKeyListener((KeyListener) new KeyChecker());
 
         JFrame jframe = new JFrame();
 
@@ -23,7 +28,7 @@ public class Main {  public static void main(String[] args)throws Exception {
 
     }
 
-    static class Keychecker extends KeyAdapter {
+    static class KeyChecker extends KeyAdapter {
 
         @Override
         public void keyPressed(KeyEvent event) {
@@ -31,7 +36,8 @@ public class Main {  public static void main(String[] args)throws Exception {
             char ch = event.getKeyChar();
             if (Character.isLetter(ch)) {
                 JOptionPane.showMessageDialog(null, "Fingerprint scan successful");
-                EnterPin enterPin = new EnterPin();
+                BankUI bankUI = new BankUI();
+                bankUI.mainUI();
             } else {
                 JOptionPane.showMessageDialog(null, "Fingerprint scan not successful");
             }
@@ -39,8 +45,5 @@ public class Main {  public static void main(String[] args)throws Exception {
         }
 
     }
-
-}
-
 
 }
